@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+        function isCharKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode==32)
+                return true;
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+    <form action="data1.php" method="post">
+        <table class="table">
+            <thead>
+                <th colspan="2" class="thead">Registeration</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" name="iname" placeholder="Enter your name" required onkeypress="return isCharKey(event)"/></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Phone No:</label></td>
+                    <td><input type="tel" name="iphone" placeholder="Enter phone no" 
+                        required maxlength="10" onkeypress="return isNumberKey(event)"/></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" name="iemail" placeholder="Enter your email" required /></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date of Birth:</label></td>
+                    <td><input type="date" name="idate" placeholder="Select birth date" required /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" name="save" class="button-save" value="Save" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+</body>
+
+</html>
